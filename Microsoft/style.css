@@ -1,0 +1,897 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Segoe UI',SegoeUI,'Microsoft JhengHei',微軟正黑體,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.udcenter {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.lfcenter {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.floatR {
+  float: right;
+}
+
+.mb {
+  display: none;
+}
+
+.wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.all {
+  width: 100%;
+  padding: 0 5%;
+  margin: auto;
+}
+
+@media (max-width: 1083px) {
+  .all {
+    padding: 0;
+  }
+}
+
+.all .header {
+  width: 100%;
+  max-width: 1600px;
+  margin: auto;
+  margin-bottom: 2px;
+}
+
+.all .header .menu-left {
+  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+}
+
+@media (max-width: 859px) {
+  .all .header .menu-left {
+    display: block;
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+.all .header .menu-left .hamm {
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/bar.png");
+  background-position: center;
+  background-size: contain;
+  margin: 0 5px;
+  display: none;
+}
+
+@media (max-width: 859px) {
+  .all .header .menu-left .hamm {
+    display: block;
+  }
+}
+
+.all .header .menu-left .searchicon-left {
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/search.PNG");
+  background-position: center;
+  background-size: contain;
+  margin: 0 5px;
+  display: none;
+}
+
+@media (max-width: 859px) {
+  .all .header .menu-left .searchicon-left {
+    display: block;
+  }
+}
+
+.all .header .logo {
+  width: 137px;
+  height: 53px;
+  background-image: url("../img/micrologo.jpg");
+}
+
+@media (max-width: 859px) {
+  .all .header .logo {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin: 0 auto;
+  }
+}
+
+.all .header .paddinglinkarea {
+  width: unset;
+  height: unset;
+  justify-items: flex-start;
+  margin-right: auto;
+}
+
+@media (max-width: 859px) {
+  .all .header .paddinglinkarea {
+    display: none;
+  }
+}
+
+.all .header .paddinglinkarea .linkgroup {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.all .header .paddinglinkarea .linkgroup li {
+  list-style: none;
+  border: 0px 1px solid black;
+  padding: 3px;
+}
+
+.all .header .paddinglinkarea .linkgroup li a {
+  padding: 15px 1px;
+  padding-bottom: 5px;
+  margin: 0 1px;
+  font-size: 13px;
+  text-decoration: none;
+  position: relative;
+}
+
+.all .header .paddinglinkarea .linkgroup li a::before {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -2px;
+  bottom: 0;
+  width: 40px;
+}
+
+.all .header .paddinglinkarea .linkgroup li a::after {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -2px;
+  bottom: 0;
+  width: 40px;
+}
+
+.all .header .paddinglinkarea .linkgroup li a:hover::after {
+  display: block;
+}
+
+.all .header .actionarea {
+  background-color: white;
+  padding: 0 5px;
+  font-size: 13px;
+}
+
+@media (max-width: 859px) {
+  .all .header .actionarea {
+    display: none;
+  }
+}
+
+.all .header .actionarea li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.all .header .actionarea a {
+  padding: 15px 1px;
+  padding-bottom: 5px;
+  margin: 0 1px;
+  font-size: 15px;
+  text-decoration: none;
+  position: relative;
+}
+
+.all .header .actionarea a:hover::after {
+  display: block;
+}
+
+.all .header .actionarea .allmicrosoft {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  margin: 0 5px;
+}
+
+.all .header .actionarea .allmicrosoft a::before {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: 0;
+  width: 90px;
+}
+
+.all .header .actionarea .allmicrosoft a::after {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: 0;
+  width: 90px;
+}
+
+.all .header .actionarea .search {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  margin: 0 5px;
+}
+
+.all .header .actionarea .search a::before {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: 0;
+  width: 45px;
+}
+
+.all .header .actionarea .search a::after {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: 0;
+  width: 45px;
+}
+
+@media (max-width: 1083px) {
+  .all .header .actionarea .search a {
+    display: none;
+  }
+}
+
+.all .header .actionarea .search .searchicon {
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/search.PNG");
+  background-position: center;
+  background-size: contain;
+  margin: 0 5px;
+}
+
+.all .header .actionarea .buy {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  margin: 0 5px;
+}
+
+.all .header .actionarea .buy a::before {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: 0;
+  width: 45px;
+}
+
+.all .header .actionarea .buy a::after {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: 0;
+  width: 45px;
+}
+
+@media (max-width: 1083px) {
+  .all .header .actionarea .buy a {
+    display: none;
+  }
+}
+
+.all .header .actionarea .buy .buyicon {
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/car.png");
+  background-position: center;
+  background-size: contain;
+  margin: 0 5px;
+}
+
+.all .header .actionarea .signin {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  margin: 0 0px;
+}
+
+@media (max-width: 1083px) {
+  .all .header .actionarea .signin a {
+    display: none;
+  }
+}
+
+.all .header .actionarea .signin .signicon {
+  width: 35px;
+  height: 35px;
+  background-image: url("../img/login.png");
+  background-position: center;
+  background-size: contain;
+  margin: 0 5px;
+}
+
+.all .header .menu-right {
+  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+}
+
+@media (max-width: 859px) {
+  .all .header .menu-right {
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+}
+
+.all .header .menu-right .buyicon-right {
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/car.png");
+  background-position: center;
+  background-size: contain;
+  margin: 0 5px;
+  display: none;
+}
+
+@media (max-width: 859px) {
+  .all .header .menu-right .buyicon-right {
+    display: block;
+  }
+}
+
+.all .header .menu-right .signicon-right {
+  width: 35px;
+  height: 35px;
+  background-image: url("../img/login.png");
+  background-position: center;
+  background-size: contain;
+  margin: 0 5px;
+  display: none;
+}
+
+@media (max-width: 859px) {
+  .all .header .menu-right .signicon-right {
+    display: block;
+  }
+}
+
+.all .banner {
+  width: 100%;
+  height: 31vw;
+  margin: auto;
+  padding: 0 auto;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+@media (max-width: 1083px) {
+  .all .banner {
+    height: 56vw;
+  }
+}
+
+@media (max-width: 859px) {
+  .all .banner {
+    height: 100vw;
+  }
+}
+
+@media (max-width: 539px) {
+  .all .banner {
+    height: 115vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.all .banner .imagery {
+  background-image: url(../img/image1.webp);
+  height: 31vw;
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+@media (max-width: 1083px) {
+  .all .banner .imagery {
+    height: 56vw;
+  }
+}
+
+@media (max-width: 859px) {
+  .all .banner .imagery {
+    height: 100vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .all .banner .imagery {
+    height: 75vw;
+  }
+}
+
+@media (max-width: 539px) {
+  .all .banner .imagery {
+    height: 115vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.all .banner .banner-block {
+  position: absolute;
+  bottom: 1vW;
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .all .banner .banner-block {
+    background-color: lightgray;
+    width: 100%;
+  }
+}
+
+.all .banner .banner-block .banner-title {
+  margin: auto;
+}
+
+.all .banner .banner-block .banner-title1 {
+  margin-top: 12px;
+  margin: auto;
+}
+
+.all .banner .banner-block .group {
+  margin: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 12px;
+  margin-bottom: 41px;
+  padding: 12px 2px 0px 2px;
+}
+
+.all .banner .banner-block .group .group1 a {
+  background-color: black;
+  padding: 10px 20px 6px 22px;
+  margin-right: 24px;
+  color: white;
+}
+
+.all .goods {
+  width: calc(100% + 20px);
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+  margin: 10px 0;
+  margin-bottom: 40px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.all .goods a {
+  padding: 15px 1px;
+  padding-bottom: 5px;
+  margin: 0 1px;
+  font-size: 15px;
+  text-decoration: none;
+  position: relative;
+}
+
+.all .goods .goodsareastyle {
+  width: 25%;
+  padding: 10px;
+}
+
+@media (max-width: 1083px) {
+  .all .goods .goodsareastyle {
+    width: 50%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 539px) {
+  .all .goods .goodsareastyle {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.all .goods .m0 {
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+}
+
+.all .goods .goodsarea1 a::before {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .goods .goodsarea1 a::after {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .goods .goodsarea1 a:hover::after {
+  display: block;
+}
+
+.all .goods .goodsarea2 a::before {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .goods .goodsarea2 a::after {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .goods .goodsarea2 a:hover::after {
+  display: block;
+}
+
+.all .goods .goodsarea3 a::before {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .goods .goodsarea3 a::after {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .goods .goodsarea3 a:hover::after {
+  display: block;
+}
+
+.all .goods .goodsarea4 a::before {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .goods .goodsarea4 a::after {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .goods .goodsarea4 a:hover::after {
+  display: block;
+}
+
+.all .image {
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.all .image .imagery2 {
+  height: 31vw;
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.all .image .image-block {
+  position: absolute;
+  bottom: 8vW;
+  width: 40%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .all .image .image-block {
+    background-color: lightgray;
+    width: 100%;
+    display: none;
+  }
+}
+
+.all .image .image-block .image-title {
+  margin: auto;
+}
+
+.all .image .image-block .image-title1 {
+  margin-top: 12px;
+  margin: auto;
+}
+
+.all .image .image-block .image-group {
+  margin: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 12px;
+  margin-bottom: 41px;
+  padding: 12px 2px 0px 2px;
+}
+
+.all .image .image-block .image-group a {
+  background-color: black;
+  padding: 10px 20px 6px 22px;
+  margin-right: 24px;
+  color: white;
+}
+
+.all .workplace {
+  width: calc(100% + 20px);
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.all .workplace a {
+  padding: 15px 1px;
+  padding-bottom: 5px;
+  margin: 0 1px;
+  font-size: 15px;
+  text-decoration: none;
+  position: relative;
+}
+
+.all .workplace .workplacestyle {
+  width: 25%;
+  padding: 10px;
+}
+
+@media (max-width: 1083px) {
+  .all .workplace .workplacestyle {
+    width: 50%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 539px) {
+  .all .workplace .workplacestyle {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.all .workplace .m0 {
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+}
+
+.all .workplace .workplace1 a::before {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .workplace .workplace1 a::after {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .workplace .workplace1 a:hover::after {
+  display: block;
+}
+
+.all .workplace .workplace2 a::before {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .workplace .workplace2 a::after {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .workplace .workplace2 a:hover::after {
+  display: block;
+}
+
+.all .workplace .workplace3 a::before {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .workplace .workplace3 a::after {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .workplace .workplace3 a:hover::after {
+  display: block;
+}
+
+.all .workplace .workplace4 a::before {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .workplace .workplace4 a::after {
+  background: currentColor;
+  content: "";
+  display: none;
+  height: 2px;
+  position: absolute;
+  left: -1px;
+  bottom: -0;
+  width: 65px;
+}
+
+.all .workplace .workplace4 a:hover::after {
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */

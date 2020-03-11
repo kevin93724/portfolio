@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .pc {
+            display: block;
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        .all {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .menu {
+            width: 366px;
+            height: 100vh;
+            padding-top: 100px;
+            ;
+            background-color: yellow;
+        }
+
+        .content {
+            width: calc(100% - 366px);
+            height: 100vh;
+            padding: calc(50vh - 285px) 0;
+            background-color: blue;
+        }
+
+        .edge {
+            width: 957px;
+            height: 570px;
+            margin-left: calc(50vw - 662px);
+            margin-right: calc(50vw - 662px);
+            display: flex;
+            flex-wrap: wrap;
+            /* background-color: red; */
+
+        }
+
+        .trigger-menu {
+            width: 38px;
+            height: 38px;
+            background-color: gray;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            background-color: rosybrown;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+
+        .menu-btn {
+            margin: auto;
+            width: 85px;
+            display: flex;
+            justify-content: center;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        li {
+            list-style: none;
+            padding: 10px 20px;
+            background-color: seagreen;
+            margin-bottom: 10px;
+        }
+
+        #boxA {
+
+            /* margin-right: 10px; */
+            background-image: url('img/flower_1.jpg');
+            /* background-position: center; */
+            /* background-size: cover; */
+            /* background-attachment: fixed; */
+
+        }
+
+        #boxB {
+
+            /* width: 313px; */
+            /* margin-right: 10px; */
+            background-image: url('img/cat_1.jpg');
+            /* background-position: center; */
+            /* background-size: cover; */
+            /* background-attachment: fixed;; */
+        }
+
+        #boxC {
+            /* float: left; */
+            background-image: url('img/bear_1.jpg');
+            /* background-position: center; */
+            /* background-size: cover; */
+            /* background-attachment: fixed; */
+
+        }
+
+
+        .box_type {
+            /* width: 312px; */
+            height: 100%;
+            flex: 1;
+            background-color: violet;
+            background-position: center;
+            background-size: cover;
+            transition: 1s;
+        }
+
+        .box_type:hover {
+            flex: 2;
+        }
+
+        .mask_type {
+            /* float: left; */
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            ;
+        }
+
+        .mask_type:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            transition: 1s;
+        }
+
+
+
+
+
+        /* PC 1280*/
+        @media (max-width: 1323px) {
+            .edge {
+                width: 800px;
+                height: 570px;
+                margin-left: calc(50vw - 583px);
+                margin-right: calc(50vw - 583px);
+                display: flex;
+                flex-wrap: wrap;
+                /* background-color: red;     */
+            }
+
+            #boxA {
+                /* float: left; */
+                /* margin-right: 10px; */
+                flex: unset;
+                width: 100%;
+                height: calc(50% - 5px);
+                background-image: url('img/flower_1.jpg');
+                /* background-attachment: fixed; */
+                margin-bottom: 10px;
+
+            }
+
+            #boxB {
+                /* float: left; */
+                width: calc(50% - 5px);
+                height: calc(50% - 5px);
+                margin-right: 10px;
+                background-image: url('img/cat_1.jpg');
+                /* background-attachment: fixed;; */
+            }
+
+            #boxC {
+                /* float: left; */
+                width: calc(50% - 5px);
+                height: calc(50% - 5px);
+                background-image: url('img/bear_1.jpg');
+                /* background-attachment: fixed; */
+
+            }
+
+
+            .box_type {
+                /* width: 334px; */
+                /* height:492px; */
+                background-color: violet;
+                background-position: center;
+                background-size: cover;
+                transition: 1s;
+                /* margin-top: 10px; */
+            }
+
+            .mask_type {
+                /* float: left; */
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                ;
+            }
+
+            .mask_type:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+                transition: 1s;
+            }
+
+        }
+
+        /* END -PC 1280*/
+
+
+
+        /* Tablet 768*/
+        @media (max-width: 1166px) {
+            .all {
+                justify-content: center;
+            }
+
+            .menu {
+                width: 100%;
+                height: unset;
+                padding-top: 0;
+                padding: 20px;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .content {
+                width: 100%;
+                height: 880px;
+                /* float:none; */
+                padding: 0;
+                /* height: 100vh;; */
+            }
+
+            .edge {
+                width: 700px;
+                height: 800px;
+                margin-left: calc(50% - 350px);
+                /* background-color: red;     */
+            }
+
+            .logo {
+                width: 38px;
+                height: 38px;
+                /* float: left; */
+                margin: 0;
+                position: absolute;
+                top: 20px;
+                left: 15px;
+                /* left: calc(50% - 19px); */
+
+            }
+
+            .menu-btn {
+                /* float:right; */
+                width: unset;
+                /* position:absolute; */
+                top: 20px;
+                right: 50px;
+            }
+
+            ul {
+                display: unset;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            li {
+                display: inline-block;
+                margin: 0;
+            }
+
+        }
+
+        /* END -Tablet 768*/
+
+
+        /* Phone 375*/
+        @media (max-width:767px) {
+            .pc {
+                display: none;
+            }
+
+            .mobile {
+                display: block;
+            }
+
+            .logo {
+                /* float:right; */
+                /* margin-right: calc(50vw - 19px); */
+                margin: 0;
+                position: absolute;
+                top: 20px;
+                left: 15px;
+                left: calc(50% - 19px);
+            }
+
+            .menu {
+                padding: 20px, calc(50vw - 19px) 20px 20px;
+            }
+
+            .menu-btn {
+                display: block;
+                margin: auto;
+                width: 150px;
+                position: absolute;
+                top: 70px;
+                left: -850px;
+                transition: left 1s;
+            }
+
+            .trigger-menu:hover~.menu-btn {
+                display: block;
+                left: -500px;
+                /* transition: left 10s; */
+            }
+
+            li {
+                min-width: 100px;
+            }
+
+            .content {
+                width: 100%;
+                min-width: 375px;
+                height: 100vh;
+            }
+
+            .edge {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+                /* background-color: red;     */
+            }
+
+            #boxA {
+                width: 100%;
+                height: 50vh;
+                margin-bottom: 0;
+                margin-right: 0;
+                /* clear:both; */
+                /* float: left; */
+                /* margin-right: 10px; */
+                /* width: 738px; */
+                /* height:492px; */
+                /* background-image: url('img/flower_1.jpg'); */
+                /* background-attachment: fixed;margin-bottom: 10px;; */
+
+            }
+
+            #boxB {
+                width: 100%;
+                height: 50vh;
+                margin-right: unset;
+                /* float: left; */
+                /* width: 364px; */
+                /* height:492px; */
+                /* margin-right: 10px; */
+                /* background-image: url('img/cat_1.jpg'); */
+                /* background-attachment: fixed;; */
+            }
+
+            #boxC {
+                width: 100%;
+                height: 50vh;
+                /* float: left; */
+                /* width: 364px; */
+                /* height:492px; */
+                /* background-image: url('img/bear_1.jpg'); */
+                /* background-attachment: fixed; */
+
+            }
+
+
+            .box_type {
+                width: 100%;
+                height: 50vh;
+                background-color: violet;
+                background-position: center;
+                background-size: cover;
+                transition: 1s;
+                flex: unset;
+                /* margin-top: 10px; */
+            }
+
+            .box_type:hover {
+                flex: unset;
+            }
+
+            .mask_type {
+                /* float: left; */
+                width: 100%;
+                height: 50vh;
+                background-color: rgba(0, 0, 0, 0.8);
+                ;
+            }
+
+            .mask_type:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+                transition: 1s;
+            }
+
+
+        }
+
+        /* END - Phone 375*/
+    </style>
+
+
+</head>
+
+
+
+<body>
+    <div class="all">
+        <div class="menu">
+            <div class="trigger-menu mobile"></div>
+            <div class="logo"></div>
+            <div class="menu-btn pc">
+                <ul>
+                    <li>XXX</li>
+                    <li>YYY</li>
+                    <li>ZZZ</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="content">
+            <div class="edge">
+                <div id="boxA" class="box_type">
+                    <div id="maskA" class="mask_type"></div>
+                </div>
+
+                <div id="boxB" class="box_type">
+                    <div id="maskB" class="mask_type"></div>
+                </div>
+                <div id="boxC" class="box_type">
+                    <div id="maskC" class="mask_type"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+body{
+    margin:0;
+}
+.container{
+    display: flex;
+    width:80%;
+    margin: auto;
+    padding:0;
+    flex-wrap: wrap;
+    background-color: white;
+}
+.current_date {
+    display: flex;
+    justify-content: center;;
+    width: 100%;
+    margin: 10px auto;
+    padding:0;
+    font-size: 30px;
+}
+.cards{
+/* flex:1; */
+    width:100%;
+    /* justify-content: center; */
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction:column; */
+    /* align-items: center; */
+}
+.card{
+    /* flex:1; */
+    width:29%;
+    /* justify-content: center; */
+    background-color: white;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    border: 2px solid black;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.card_img img {
+    width:100%;
+    
+    
+}
+
+
+</style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="current_date"></div>
+        <div class="cards">
+
+          <!-- <div class="card">
+            <div class="card_img">
+                <img src="./img/sunny.jpg" alt="">
+            </div>
+            <h1>台中市</h1>
+            <h2>多雲時晴</h2>
+            
+            <div>
+                <span>最高溫:20C</span>
+                <span>最低溫:10C</span>
+            </div>
+            <div>微冷,須穿外套禦寒</div>
+            
+        </div> -->
+        <!-- <div class="card">
+            <div class="card_img">
+                <img src="http://image.91chep.com/8de4024f956d4bc5b6c7b1a94b0c5a48680_680.jpg" alt="">
+            </div>
+            <h1>台中市</h1>
+            <h2>陰天</h2>
+            
+            <div>
+                <span>最高溫:20C</span>
+                <span>最低溫:10C</span>
+            </div>
+            <div>微冷,須穿外套禦寒</div>
+        </div> -->
+        <!-- <div class="card">
+            <div class="card_img">
+                <img src="./img/cloud.jpg" alt="">
+            </div>
+            <h1>台中市</h1>
+            <h2>下雨</h2>
+            
+            <div>
+                <span>最高溫:20C</span>
+                <span>最低溫:10C</span>
+            </div>
+            <div>微冷,須穿外套禦寒</div>
+        </div> -->
+        <!-- <div class="card">
+            <div class="card_img">
+                <img src="./img/rain.webp" alt="">
+            </div>
+            <h1>台中市</h1>
+            <h2>多雲時晴</h2>
+            
+            <div>
+                <span>最高溫:20C</span>
+                <span>最低溫:10C</span>
+            </div>
+            <div>微冷,須穿外套禦寒</div>
+        </div> -->
+    </div>   
+
+    
+                
+    </div>
+    
+<script>
+    // fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-A520030F-35E4-4FE5-81D8-3D2FF46DE19F')
+    // .then(fuction(response) {
+    //     return response.json(); 
+    // })
+
+    fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-A520030F-35E4-4FE5-81D8-3D2FF46DE19F')
+  .then(function(response) {
+    return response.json();
+    })
+
+    .then(function(weather_array) {
+        console.log(weather_array);
+
+        var locations = weather_array.records.location;
+        console.log(locations);
+
+        locations.forEach(location => {
+            var location_name = location.locationName;
+            // console.log(location_name);
+            var Wx =  location.weatherElement[0].time[0].parameter.parameterName;  //天氣現象
+            // console.log(Wx);
+            var MaxT =  location.weatherElement[4].time[0].parameter.parameterName;
+            // console.log(MaxT);
+            var MinT =  location.weatherElement[2].time[0].parameter.parameterName;
+            // console.log(MinT);
+            var WeatherDescription =  location.weatherElement[3].time[0].parameter.parameterName;
+            // console.log(WeatherDescription);
+            var Unit =  location.weatherElement[4].time[0].parameter.parameterUnit;
+            // console.log(Unit);
+            var Wx_code =  location.weatherElement[0].time[0].parameter.parameterValue;  //天氣代碼
+            console.log(Wx_code);
+
+            if (Wx_code == '1') {
+                var weather_icon = './img/sunny.jpg';
+            }  else if (Wx_code == '2'||Wx_code == '3'||Wx_code == '4'||Wx_code == '5'||Wx_code == '6') {
+                var weather_icon = './img/partial_cloudy1.png';
+            }  else if (Wx_code == '7') {
+                var weather_icon = './img/cloud.jpg';
+            }   else {
+                var weather_icon = './img/rain1.jpg';
+            }
+            //天氣fig judge
+
+            var cards = document.querySelector(".cards");
+            //模板字串
+             cards.innerHTML += `
+                    <div class="card">
+                        <div class="card_img">
+                            <img src="${weather_icon}" alt="">
+                        </div>
+                        <h1>${location_name}</h1>
+                        <h2>${Wx}</h2>
+                        
+                        <div>
+                            <span>最高溫:${MaxT}${Unit}</span>
+                            <span>最低溫:${MinT}${Unit}</span>
+                        </div>
+                        <div>${WeatherDescription}</div>
+                    </div>
+ 
+             `
+                    
+        })
+
+        var today = new Date();
+        var current_day = today.getFullYear()+'年'+(today.getMonth()+1)+"月"+today.getDate();
+        console.log(current_day)
+        var current_time = today.getHours()+':'+today.getMinutes()+':'+today.getSeconds();
+        console.log(current_time)
+        
+        var current_date = document.querySelector(".current_date");
+            current_date.innerHTML += '現在時間' + current_day +'-'+ current_time; 
+              
+    });
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
